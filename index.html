@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Site de HTML e CSS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Introdução ao HTML e CSS</h1>
+  </header>
+
+  <main>
+    <div class="cab">
+      <div onclick="abrirIntro()" class="btn">O que são<br>HTML e CSS?</div>
+      <div onclick="abrirEstrutura()" class="btn">Estrutura de um<br>documento HTML</div>
+      <div onclick="abrirTags()" class="btn">Tags HTML mais<br>comuns e utilizadas</div>
+      <div onclick="abrirLink()" class="btn">Funcionamento de<br>links e navegação</div>
+      <div onclick="abrirMedia()" class="btn">Imagens e<br>multimídia</div>
+      <div onclick="abrirForms()" class="btn">Funcionamento de<br>formulários HTML</div>
+    </div>
+
+    <div>
+      <div class="modalIntro modalStyle" id="janelaIntro">
+        <div class="intro style">
+          <button class="fechar" id="fechar">x</button>
+          <h2>Definição de HTML e CSS</h2>
+          <p>HTML, ou HyperText Markup Language é uma linguagem de marcação usada para criar a estrutura básica de uma página Web utilizando "tags" para definir diferentes elementos dentro de uma página, como títulos, parágrafos, listas e muito mais. Essas tags são interpretadas pelos navegadores para renderizar o conteúdo na tela do usuário.</p>
+          <p>CSS, ou Cascading Style Sheets, é uma linguagem de estilo utilizada para controlar a apresentação e o layout de elementos em uma página da Web, permitindo definir cores, fontes, espaçamentos, alinhamentos e outros aspectos visuais de elementos HTML. O CSS separa a estrutura do conteúdo da apresentação visual, facilita a manutenção e atualização do design de um site e permite maior controle e flexibilidade na aparência de uma página da web.</p>
+        </div>
+      </div>   
+
+
+    <div class="modalEstrutura modalStyle" id="janelaEstrutura">
+      <div class="estrutura style">
+        <button class="fechar" id="fechar">X</button>
+        <h2>Estrutura do HTML</h2>
+        <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-br"&gt;
+
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Título da Página&lt;/title&gt;
+  &lt;link rel="stylesheet" href="styles.css"&gt;
+  &lt;script src="script.js" defer>&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;!-- Conteúdo da página vai aqui --&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;</pre>
+      </div>
+    </div>
+
+    <div class="modalTags modalStyle" id="janelaTags">
+      <div class="tags style">
+        <button class="fechar" id="fechar">x</button>
+        <h2>Tags Comuns de HTML</h2>
+
+        <p><strong>Tags de Texto</strong></p>
+        <ul>
+          <li>&lt;h1&gt; a &lt;h6&gt;: Definem títulos de diferentes níveis de importância.</li>
+          <li>&lt;p&gt;: Define um parágrafo de texto.</li>
+          <li>&lt;span&gt;: Usado para aplicar estilos ou comportamentos a parte do texto.</li>
+          <li>&lt;strong&gt; e &lt;em&gt;: Usados para enfatizar ou destacar texto, geralmente exibidos em negrito ou itálico, respectivamente.</li>
+        </ul>
+
+        <p><strong>Listas</strong></p>
+        <ul>
+          <li>&lt;ul&gt;: Define uma lista não ordenada.</li>
+          <li>&lt;ol&gt;: Define uma lista ordenada.</li>
+          <li>&lt;li&gt;: Define um item de lista, dentro de &lt;ul&gt; ou &lt;ol&gt;.</li>
+        </ul>
+
+        <p><strong>Links e Imagens</strong></p>
+        <ul>
+          <li>&lt;a&gt;: Define um link para outra página.</li>
+          <li>&lt;img&gt;: Insere uma imagem na página.</li>
+        </ul>
+      </div>
+    </div>   
+
+    <div class="modalLink modalStyle" id="janelaLink">
+      <div class="link style">
+        <button class="fechar" id="fechar">x</button>
+        <h2>Links e Navegação</h2>
+
+        <p><strong>Elemento &lt;a&gt;</strong></p>
+        <ul>
+          <li>&lt;a&gt;: Define um hyperlink, ou seja, um link para outra página ou recurso na web.</li>
+          <li>O atributo <code>href</code> especifica o destino do link.</li>
+          <li>Pode conter texto ou outros elementos como imagens.</li>
+        </ul>
+
+        <p><strong>Links Relativos vs. Absolutos</strong></p>
+        <ul>
+          <li><strong>Links Relativos:</strong> Referenciam recursos dentro do mesmo site.</li>
+          <p><code>&lt; href="/pagina.html"&gt;:Página Interna&lt;/a&gt;:</code></p>
+          <li><strong>Links Absolutos:</strong> Referenciam recursos em outros sites, especificando o URL completo.</li>
+          <p><code>&lt; href="https://www.example.com"&gt;:Página Externa&lt;/a&gt;:</code></p>
+          <li><strong>Âncoras Internas:</strong>Âncoras internas permitem a navegação dentro da mesma página, especificando uma posição específica no documento usando o atributo <code>href</code> com um identificador.</li>
+          <p><pre>
+&lt;a href="#section1"&gt;Ir para a Seção 1&lt;/a&gt;
+
+&lt;!-- ...conteúdo da página... --&gt;
+              
+&lt;h2 id="section1">Seção 1&lt;/h2&gt;
+&lt;p>Conteúdo da Seção 1...&lt;/p&gt;</pre></p>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="modalMedia modalStyle" id="janelaMedia">
+      <div class="media style">
+        <button class="fechar" id="fechar">x</button>
+        <h2>Imagens e Multimídia</h2>
+        <ul>
+          <li>Imagens e multimídia são elementos essenciais em páginas da web, adicionando interesse visual e interatividade.</li>
+          <li>HTML oferece tags específicas para incorporar imagens, áudio, vídeo e outros tipos de mídia.</li>
+        </ul>
+
+        <p><strong>Elemento &lt;img&gt;</strong></p>
+        <ul>
+          <li>&lt;img&gt;: Utilizado para inserir imagens em uma página web.</li>
+          <li>O atributo <code>src</code> especifica o URL da imagem.</li>
+          <li>O atributo <code>alt</code> fornece um texto alternativo para casos onde a imagem não pode ser exibida.</li>
+          <li>Exemplo de inserção de imagem:</li>
+          <p><code>&lt;img src="imagem.jpg" alt="Descrição da Imagem"&gt;</code></p>
+        </ul>
+
+        <p><strong>Imagens Responsivas</strong></p>
+        <ul>
+          <li>Imagens responsivas se ajustam automaticamente ao tamanho da tela do dispositivo.</li>
+          <li>Isso é alcançado utilizando o atributo <code>width</code> com uma unidade relativa, como porcentagem</li>
+          <li>Exemplo de imagem responsiva:</li>
+          <p><code>&lt;img src="imagem.jpg" alt="Descrição da Imagem" width="100%"&gt;</code></p>
+        </ul>
+
+        <p><strong>Elemento &lt;audio&gt;</strong></p>
+        <ul>
+          <li>&lt;audio&gt;: Utilizado para incorporar áudio em uma página web.</li>
+          <li>Os atributos <code>src</code> e <code>controls</code> são comuns para especificar o URL do arquivo de áudio e exibir controles de reprodução.</li>
+          <li>Exemplo de inserção de áudio:</li>
+          <p><pre>
+&lt;audio controls>
+  &lt;source src="horse.ogg" type="audio/ogg"&gt;
+  &lt;source src="horse.mp3" type="audio/mpeg"&gt;
+  Seu navegador não suporta o elemento de áudio.
+&lt;/audio&gt;</pre></p>
+        </ul>
+
+        <p><strong>Elemento &lt;video&gt;</strong></p>
+        <ul>
+          <li>&lt;video&gt;: Utilizado para incorporar vídeos em uma página web.</li>
+          <li>Os atributos <code>src</code> e <code>controls</code> são comuns para especificar o URL do arquivo de vídeo e exibir controles de reprodução.</li>
+          <li>Exemplo de inserção de vídeo:</li>
+          <p><pre>
+&lt;video width="320" height="240" controls&gt;
+  &lt;source src="movie.mp4" type="video/mp4"&gt;
+  &lt;source src="movie.ogg" type="video/ogg"&gt;
+  Seu navegador não suporta o elemento de vídeo.
+&lt;/video&gt;</pre></p>
+        </ul>
+      </div>
+    </div>  
+
+    <div class="modalForms modalStyle" id="janelaForms">
+      <div class="forms style">
+        <button class="fechar" id="fechar">x</button>
+        <h2>Formulários HTML</h2>
+        <ul>
+          <li>Formulários HTML permitem aos usuários inserir dados e interagir com uma página da web.</li>
+          <li>Eles são usados para coletar informações, como nome, e-mail, senha, entre outros.</li>
+        </ul>
+        <p><strong>Elemento &lt;form&gt;</strong></p>
+        <ul>
+          <li>&lt;form&gt;: Define um formulário HTML.</li>
+          <li>Os elementos dentro de um formulário são enviados para o servidor para processamento quando o formulário é enviado.</li>
+          <li>Exemplo de estrutura de formulário:</li>
+          <p><pre>
+&lt;form&gt;
+  Elementos do formulário
+&lt;/form&gt;</pre></p>
+        </ul>
+
+        <p><strong>Elemento &lt;input&gt;</strong></p>
+        <ul>
+          <li>&lt;input&gt;: Elemento básico para entrada de dados.</li>
+          <li>O atributo <code>type</code> define o tipo de entrada, como texto, senha, checkbox, radio, etc.</li>
+          <li>O atributo <code>name</code> é usado para identificar os dados no servidor.</li>
+          <li>Exemplo de input com texto:</li>
+          <p><code>&lt;input type="text" name="nome" placeholder="Digite seu nome"&gt;</code></p>
+          <input type="text" name="nome" placeholder="Digite seu nome">
+          <p></p>
+          <li>Exemplo de input com checkbox:</li>
+          <p><pre>
+&lt;input type="checkbox" name="interesses" value="esportes"&gt; Esportes
+&lt;input type="checkbox" name="interesses" value="musica"&gt; Música
+&lt;input type="checkbox" name="interesses" value="tecnologia"&gt; Tecnologia</pre></p>
+<input type="checkbox" name="interesses" value="esportes"> Esportes
+<input type="checkbox" name="interesses" value="musica"> Música
+<input type="checkbox" name="interesses" value="tecnologia"> Tecnologia
+        </ul>
+<p></p>
+        <p><strong>Elemento &lt;select&gt;</strong></p>
+        <ul>
+          <li>&lt;select&gt;: Cria um menu suspenso de opções.</li>
+          <li>Os elementos <code>&lt;option&gt;</code> definem as opções disponíveis.</li>
+          <li>Exemplo:</li>
+          <p><pre>
+&lt;select name="cidade"&gt;
+  &lt;option value="sp"&gt;São Paulo&lt;/option&gt;
+  &lt;option value="rj"&gt;Rio de Janeiro&lt;/option&gt;
+  &lt;option value="bh"&gt;Belo Horizonte&lt;/option&gt;
+&lt;/select&gt;</pre></p>
+<select name="cidade">
+  <option value="sp">São Paulo</option>
+  <option value="rj">Rio de Janeiro</option>
+  <option value="bh">Belo Horizonte</option>
+</select>
+        </ul>
+
+      </div>
+    </div>  
+  </div>
+
+    <script src="script.js"></script>
+
+  </main>
+</body>
+</html>
