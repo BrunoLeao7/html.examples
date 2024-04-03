@@ -1,65 +1,41 @@
-function abrirIntro() {
-    const modal =  document.getElementById('janelaIntro')
-    modal.classList.add('abrir')
-
-    modal.addEventListener('click', (e) => {
-        if(e.target.id == 'fechar' || e.target.id == 'janelaIntro') {
-            modal.classList.remove('abrir')
-        }
-    })
+// Função para abrir modal
+function openModal(modalId) {
+    var modal = document.getElementById(modalId);
+    modal.style.display = "block";
+    document.body.classList.add("blurBackground");
 }
 
-function abrirEstrutura() {
-    const modal =  document.getElementById('janelaEstrutura')
-    modal.classList.add('abrir')
-
-    modal.addEventListener('click', (e) => {
-        if(e.target.id == 'fechar' || e.target.id == 'janelaEstrutura') {
-            modal.classList.remove('abrir')
-        }
-    })
+// Função para fechar modal
+function closeModal(modalId) {
+    var modal = document.getElementById(modalId);
+    modal.style.display = "none";
+    document.body.classList.remove("blurBackground");
 }
 
-function abrirTags() {
-    const modal =  document.getElementById('janelaTags')
-    modal.classList.add('abrir')
+// Adicionando evento de clique aos botões que abrem os modais
+var openModalButtons = document.querySelectorAll(".openModal");
+openModalButtons.forEach(function(button) {
+    button.addEventListener("click", function() {
+        var modalId = this.getAttribute("dataModalId");
+        openModal(modalId);
+    });
+});
 
-    modal.addEventListener('click', (e) => {
-        if(e.target.id == 'fechar' || e.target.id == 'janelaTags') {
-            modal.classList.remove('abrir')
+// Adicionando eventos de clique aos botões de fechar
+var closeButtons = document.querySelectorAll(".modal .close");
+closeButtons.forEach(function(button) {
+    button.addEventListener("click", function() {
+        var modalId = this.closest(".modal").id;
+        closeModal(modalId);
+    });
+});
+
+// Adicionando evento de clique fora do modal para fechá-lo
+window.addEventListener("click", function(event) {
+    var modals = document.querySelectorAll(".modal");
+    modals.forEach(function(modal) {
+        if (event.target == modal) {
+            closeModal(modal.id);
         }
-    })
-}
-
-function abrirLink() {
-    const modal =  document.getElementById('janelaLink')
-    modal.classList.add('abrir')
-
-    modal.addEventListener('click', (e) => {
-        if(e.target.id == 'fechar' || e.target.id == 'janelaLink') {
-            modal.classList.remove('abrir')
-        }
-    })
-}
-
-function abrirMedia() {
-    const modal =  document.getElementById('janelaMedia')
-    modal.classList.add('abrir')
-
-    modal.addEventListener('click', (e) => {
-        if(e.target.id == 'fechar' || e.target.id == 'janelaMedia') {
-            modal.classList.remove('abrir')
-        }
-    })
-}
-
-function abrirForms() {
-    const modal =  document.getElementById('janelaForms')
-    modal.classList.add('abrir')
-
-    modal.addEventListener('click', (e) => {
-        if(e.target.id == 'fechar' || e.target.id == 'janelaForms') {
-            modal.classList.remove('abrir')
-        }
-    })
-}
+    });
+});
